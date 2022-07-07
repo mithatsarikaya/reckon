@@ -16,11 +16,13 @@ else	echo ""$NAME" directory exist, check it out"
 exit 1
 fi
 
-  
+#nmap  
 nmap -v -sS -sC -sV -O -p- -A -T4 $TARGET -oN "$NAME"/"$NAME"_nmap.txt
 
+#dirb
 dirb http://"$TARGET" -o "$NAME"/"$NAME"_dirb.txt
 
+#create main txt
 touch "$NAME"/"$NAME".txt
 
 
