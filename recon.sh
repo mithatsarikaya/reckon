@@ -17,10 +17,10 @@ exit 1
 fi
 
 #nmap  
-nmap -v -sS -sC -sV -O -p- -A -T4 $TARGET -oN "$NAME"/"$NAME"_nmap.txt
+nmap -v -sS -sC -sV -O -p- -A -T4 $TARGET -oN "$NAME"/nmap_"$NAME".txt
 
 #dirb
-dirb http://"$TARGET" -o "$NAME"/"$NAME"_dirb.txt
+dirb http://"$TARGET" -o "$NAME"/dirb_"$NAME".txt
 
 #create main txt
 touch "$NAME"/"$NAME".txt
