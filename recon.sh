@@ -25,7 +25,8 @@ dirb http://"$TARGET" -o "$NAME"/dirb_"$NAME".txt
 #create main txt
 touch "$NAME"/"$NAME".txt
 
-
+#nikto
+nikto -h "$TARGET" -o nikto_"$NAME".txt
 
 #nmap $TARGET -oN "$NAME"/"$NAME"_nmap.txt
 
