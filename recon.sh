@@ -16,17 +16,23 @@ else	echo ""$NAME" directory exist, check it out"
 exit 1
 fi
 
+#create main txt
+touch "$NAME"/"$NAME".txt
+
+echo "$TARGET" >> "$NAME"/"$NAME".txt
+
 #nmap  
 nmap -v -sS -sC -sV -O -p- -A -T4 $TARGET -oN "$NAME"/nmap_"$NAME".txt
 
+#-d added. dont wanna check directories content
 #dirb
-dirb http://"$TARGET" -o "$NAME"/dirb_"$NAME".txt
+dirb http://"$TARGET" -d -o "$NAME"/dirb_"$NAME".txt
 
 #create main txt
 touch "$NAME"/"$NAME".txt
 
 #nikto
-nikto -h "$TARGET" -o nikto_"$NAME".txt
+nikto -h "$TARGET" -o "$NAME"/nikto_"$NAME".txt
 
 #nmap $TARGET -oN "$NAME"/"$NAME"_nmap.txt
 
