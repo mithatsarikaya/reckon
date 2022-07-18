@@ -24,20 +24,12 @@ echo "$TARGET" >> "$NAME"/"$NAME".txt
 #nmap  
 nmap -v -sS -sC -sV -O -p- -A -T4 $TARGET -oN "$NAME"/nmap_"$NAME".txt
 
-#-d added. dont wanna check directories content
+#-r added. dont wanna check directories content
 #dirb
-dirb http://"$TARGET" -d -o "$NAME"/dirb_"$NAME".txt
+dirb http://"$TARGET" -r -o "$NAME"/dirb_"$NAME".txt
 
-#create main txt
-touch "$NAME"/"$NAME".txt
 
 #nikto
 nikto -h "$TARGET" -o "$NAME"/nikto_"$NAME".txt
-
-#nmap $TARGET -oN "$NAME"/"$NAME"_nmap.txt
-
-#nmap -v -sS -sC -sV -O -p- -A -T4  10.0.2.5 -oN simplictf
-
-#nmap -v -sS -sC -sV -O -p- -A -T4  10.0.2.5 -oN metasploitable2_nmap.txt
 
 
