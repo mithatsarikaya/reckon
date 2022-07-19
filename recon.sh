@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #auotomate nmap and dirb and create related folder and files
-
+#just for githubcheck
 
 TARGET=$1
 NAME=$2
