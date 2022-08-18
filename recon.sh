@@ -83,7 +83,7 @@ echo "export IP=$TARGET" >> "$NAME"/"$NAME".txt
 #-sS -sC -sV -O removed. looks like -A is enough for them.
 #nmap -A -v -p- -T4 $TARGET -oN "$NAME"/nmap_"$NAME".txt &
 
-nmap -sC -sV -sS -T5 $TARGET -oN "$NAME"/nmap_"$NAME".txt
+nmap -sC -sV -sS -T5 -v $TARGET -oN "$NAME"/nmap_"$NAME".txt
 
 
 #-r added. dont wanna check directories content
